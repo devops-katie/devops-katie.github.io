@@ -1,0 +1,417 @@
+/* Variables */
+:root {
+    --main-blue: #2196F3; /* Bright Blue */
+    --point-orange: #FF9800; /* Orange */
+    --text-dark: #333;
+    --text-light: #f4f4f4;
+    --background-light: #ffffff;
+    --background-dark: #2c3e50;
+    --card-background: #fdfdfd;
+    --border-light: #ddd;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+}
+
+/* Base Styles */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+a {
+    color: var(--main-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--point-orange);
+}
+
+h1, h2, h3 {
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 0.8em;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.2em;
+    color: var(--text-light); /* Header h1 is light for contrast */
+}
+
+h2 {
+    font-size: 2.2em;
+    border-bottom: 2px solid var(--main-blue);
+    padding-bottom: 0.5em;
+    margin-bottom: 1.5em;
+    text-align: center;
+    color: var(--main-blue);
+}
+
+h2 i {
+    margin-right: 10px;
+    color: var(--point-orange);
+}
+
+h3 {
+    font-size: 1.6em;
+    color: var(--text-dark);
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 0.8em;
+    line-height: 1.8;
+}
+
+/* Header/Intro Section */
+#intro {
+    background: linear-gradient(135deg, var(--main-blue) 0%, #007bff 100%);
+    color: var(--text-light);
+    padding: 80px 20px;
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.job-title {
+    font-size: 1.8em;
+    font-weight: 300;
+    margin-bottom: 0.5em;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.headline {
+    font-size: 1.4em;
+    font-weight: 400;
+    margin-bottom: 2em;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+.contact-links {
+    margin-top: 20px;
+}
+
+.contact-links a {
+    color: var(--text-light);
+    font-size: 1.8em;
+    margin: 0 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: var(--point-orange);
+    transform: translateY(-3px);
+}
+
+/* Main Content Sections */
+main {
+    padding: 40px 20px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: var(--background-light);
+    padding: 60px 40px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px var(--shadow-light);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Skills Section */
+#skills .skill-category {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#skills .skill-category h3 {
+    color: var(--main-blue);
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+#skills .skill-category h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: var(--point-orange);
+}
+
+#skills .skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+#skills .skill-items span {
+    background-color: #e3f2fd;
+    color: var(--main-blue);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#skills .skill-items span:hover {
+    background-color: var(--main-blue);
+    color: var(--text-light);
+    transform: translateY(-3px);
+}
+
+/* Experience Section */
+#experience .job-entry {
+    background-color: var(--card-background);
+    padding: 25px;
+    border-left: 5px solid var(--point-orange);
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+#experience .job-entry:hover {
+    transform: translateY(-5px);
+}
+
+#experience .job-entry h3 {
+    color: var(--main-blue);
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#experience .job-entry .company {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+#experience .job-entry ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding: 0;
+}
+
+#experience .job-entry ul li {
+    margin-bottom: 5px;
+}
+
+/* Projects Section */
+#projects .project-card {
+    background-color: var(--card-background);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid var(--main-blue);
+    transition: transform 0.3s ease;
+}
+
+#projects .project-card:hover {
+    transform: translateY(-5px);
+}
+
+#projects .project-card h3 {
+    color: var(--main-blue);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#projects .project-card .project-meta {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+#projects .project-card ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding: 0;
+}
+
+#projects .project-card ul li {
+    margin-bottom: 5px;
+}
+
+/* Certifications Section */
+#certifications ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding: 0;
+    color: var(--text-dark);
+}
+
+#certifications ul li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+#certifications ul li strong {
+    color: var(--main-blue);
+}
+
+/* About Me Section */
+#about-me .strengths {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #eaf7ff; /* Lighter blue background */
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid var(--point-orange);
+}
+
+#about-me .strengths h3 {
+    color: var(--main-blue);
+    margin-top: 0;
+}
+
+#about-me .strengths ul {
+    list-style: decimal; /* Numbered list for strengths */
+    margin-left: 25px;
+    padding: 0;
+}
+
+#about-me .strengths ul li {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+#about-me .strengths ul li strong {
+    color: var(--point-orange);
+}
+
+/* Contact Section */
+#contact .contact-info {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#contact .contact-info p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+#contact .contact-info p i {
+    color: var(--main-blue);
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+#contact .contact-info p a {
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    font-size: 0.9em;
+    margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .job-title, .headline {
+        font-size: 1.2em;
+    }
+
+    .contact-links a {
+        font-size: 1.5em;
+        margin: 0 10px;
+    }
+
+    section {
+        padding: 40px 20px;
+    }
+
+    #skills .skill-items span {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .job-title, .headline {
+        font-size: 1em;
+    }
+
+    .contact-links a {
+        font-size: 1.2em;
+        margin: 0 8px;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+
+    #experience .job-entry,
+    #projects .project-card,
+    #about-me .strengths {
+        padding: 20px;
+    }
+
+    #contact .contact-info p {
+        font-size: 1em;
+    }
+}

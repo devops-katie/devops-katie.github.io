@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김태영 | 클라우드 엔지니어 포트폴리오</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for Noto Sans KR font */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            scroll-behavior: smooth;
+            background: linear-gradient(135deg, #1A202C 0%, #2D3748 100%); /* Darker, more professional background */
+        }
+        /* Fade-in animation for sections */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Adjusted grain effect for header (optional, lighter) */
+        .header-bg-grain::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.5;
+            z-index: 1;
+        }
+        /* Custom border for skill categories */
+        .skill-category h3 {
+            border-bottom: 2px solid theme('colors.indigo.500'); /* Professional indigo accent */
+            padding-bottom: 0.75rem;
+        }
+    </style>
+</head>
+<body class="text-gray-800 bg-gray-50 leading-relaxed overflow-x-hidden">
+    <header class="relative py-24 text-center text-white overflow-hidden bg-gradient-to-br from-gray-900 to-gray-700 header-bg-grain">
+        <div class="container max-w-6xl mx-auto px-6 relative z-20">
+            <h1 class="text-6xl md:text-7xl font-extrabold mb-4 drop-shadow-md">김태영</h1>
+            <p class="text-2xl md:text-3xl text-indigo-400 font-semibold mb-6">클라우드 엔지니어 포트폴리오</p>
+            <p class="text-xl md:text-2xl opacity-90 mb-10 leading-relaxed max-w-3xl mx-auto">
+                "Azure 기반의 견고한 클라우드 인프라 구축 및 운영 역량과 사용자 중심의 기획력을 겸비한 <span class="text-indigo-300 font-bold">클라우드 엔지니어</span>입니다."
+            </p>
+            <div class="mt-8 flex justify-center space-x-6">
+                <a href="mailto:katiekim412@gmail.com" class="text-white text-4xl transition-transform duration-300 hover:text-indigo-300 hover:-translate-y-1" aria-label="이메일"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/katiekim412" target="_blank" class="text-white text-4xl transition-transform duration-300 hover:text-indigo-300 hover:-translate-y-1" aria-label="링크드인"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/katiekim412" target="_blank" class="text-white text-4xl transition-transform duration-300 hover:text-indigo-300 hover:-translate-y-1" aria-label="깃허브"><i class="fab fa-github"></i></a>
+                <a href="https://katiekim412.com" target="_blank" class="text-white text-4xl transition-transform duration-300 hover:text-indigo-300 hover:-translate-y-1" aria-label="포트폴리오 웹사이트"><i class="fas fa-globe"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-30 bg-white mt-[-60px] rounded-t-3xl shadow-2xl">
+        <section class="py-20 lg:py-24 border-b border-gray-100" id="skills">
+            <div class="container max-w-6xl mx-auto px-6">
+                <h2 class="fade-in text-5xl md:text-5xl font-extrabold text-center text-gray-800 mb-16 relative">
+                    <i class="fas fa-tools text-indigo-600 mr-4"></i> 핵심 역량 <span class="block w-24 h-1 bg-gradient-to-r from-indigo-600 to-blue-400 mx-auto mt-4 rounded-full"></span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+                    <div class="skill-category fade-in bg-white p-8 rounded-2xl text-center shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <h3 class="text-2xl text-indigo-700 font-bold mb-5">클라우드 플랫폼</h3>
+                        <ul class="list-none p-0 text-lg text-gray-700 space-y-2">
+                            <li>Microsoft Azure (주력)</li>
+                            <li>AWS (기초)</li>
+                            <li>클라우드 아키텍처 설계</li>
+                            <li>인프라 자동화</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category fade-in bg-white p-8 rounded-2xl text-center shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <h3 class="text-2xl text-indigo-700 font-bold mb-5">프로그래밍 언어</h3>
+                        <ul class="list-none p-0 text-lg text-gray-700 space-y-2">
+                            <li>Python</li>
+                            <li>JavaScript</li>
+                            <li>HTML/CSS</li>
+                            <li>Shell Scripting</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category fade-in bg-white p-8 rounded-2xl text-center shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <h3 class="text-2xl text-indigo-700 font-bold mb-5">운영 체제 & 도구</h3>
+                        <ul class="list-none p-0 text-lg text-gray-700 space-y-2">
+                            <li>Linux</li>
+                            <li>Git/GitHub</li>
+                            <li>Docker</li>
+                            <li>Kubernetes</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category fade-in bg-white p-8 rounded-2xl text-center shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <h3 class="text-2xl text-indigo-700 font-bold mb-5">데이터 & 분석</h3>
+                        <ul class="list-none p-0 text-lg text-gray-700 space-y-2">
+                            <li>웹 크롤링</li>
+                            <li>데이터 분석</li>
+                            <li>데이터 시각화</li>
+                            <li>업무 자동화</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 lg:py-24 border-b border-gray-100" id="experience">
+            <div class="container max-w-6xl mx-auto px-6">
+                <h2 class="fade-in text-5xl md:text-5xl font-extrabold text-center text-gray-800 mb-16 relative">
+                    <i class="fas fa-briefcase text-indigo-600 mr-4"></i> 주요 경험 <span class="block w-24 h-1 bg-gradient-to-r from-indigo-600 to-blue-400 mx-auto mt-4 rounded-full"></span>
+                </h2>
+                <div class="experience-timeline max-w-3xl mx-auto mt-12 space-y-10">
+                    <div class="experience-item fade-in bg-white p-8 rounded-2xl shadow-lg border-l-8 border-indigo-600 relative transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <h3 class="text-2xl text-gray-900 font-bold mb-2">IT 기자</h3>
+                        <p class="period text-indigo-600 font-semibold mb-4">2021.03 - 2023.12</p>
+                        <ul class="list-disc ml-6 text-gray-700 leading-relaxed space-y-2">
+                            <li><strong class="text-indigo-700">기술 트렌드 분석 및 보도:</strong> 월 30건 이상의 테크 기업 및 스타트업 관련 기사를 작성하며, 개발자와의 협업을 통해 기술적 깊이를 더했습니다.</li>
+                            <li><strong class="text-indigo-700">IT 서비스 기획 참여:</strong> 개발팀과 함께 사이트 기획 프로젝트에 참여하여, 기술과 비즈니스 관점의 이해를 넓혔습니다.</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item fade-in bg-white p-8 rounded-2xl shadow-lg border-l-8 border-indigo-600 relative transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <h3 class="text-2xl text-gray-900 font-bold mb-2">디지털 마케터</h3>
+                        <p class="period text-indigo-600 font-semibold mb-4">2019.06 - 2021.02</p>
+                        <ul class="list-disc ml-6 text-gray-700 leading-relaxed space-y-2">
+                            <li><strong class="text-indigo-700">성과 중심의 캠페인 PM:</strong> 5개 이상 기업의 디지털 마케팅 캠페인 PM을 담당하며, 평균 ROI 150% 달성을 통해 비즈니스 성과에 직접 기여했습니다.</li>
+                            <li><strong class="text-indigo-700">데이터 기반 분석 및 최적화:</strong> 고객 데이터 직접 분석 및 솔루션 제공을 통해 광고 운영 효과를 지속적으로 개선했습니다.</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item fade-in bg-white p-8 rounded-2xl shadow-lg border-l-8 border-indigo-600 relative transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <h3 class="text-2xl text-gray-900 font-bold mb-2">서비스 기획자</h3>
+                        <p class="period text-indigo-600 font-semibold mb-4">2018.01 - 2019.05</p>
+                        <ul class="list-disc ml-6 text-gray-700 leading-relaxed space-y-2">
+                            <li><strong class="text-indigo-700">사용자 경험(UX) 개선 주도:</strong> 모바일 앱 및 웹 서비스 기획 및 개발 프로세스 관리, 사용자 데이터 분석을 통한 UX 개선안 도출로 평균 사용자 만족도 4.2/5.0을 달성했습니다.</li>
+                            <li><strong class="text-indigo-700">성공적인 프로젝트 런칭:</strong> 개발팀과의 긴밀한 협업을 통해 5개 이상 프로젝트를 성공적으로 런칭했습니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 lg:py-24 border-b border-gray-100" id="projects">
+            <div class="container max-w-6xl mx-auto px-6">
+                <h2 class="fade-in text-5xl md:text-5xl font-extrabold text-center text-gray-800 mb-16 relative">
+                    <i class="fas fa-project-diagram text-indigo-600 mr-4"></i> 주요 프로젝트 <span class="block w-24 h-1 bg-gradient-to-r from-indigo-600 to-blue-400 mx-auto mt-4 rounded-full"></span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                    <div class="project-card fade-in bg-white p-8 rounded-2xl shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <h3 class="text-2xl text-indigo-700 font-bold mb-4">Azure 클라우드 인프라 구축</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">기업용 웹 애플리케이션을 위한 확장 가능하고 비용 효율적인 클라우드 인프라를 설계하고 구축했습니다.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">Azure VM</span>
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">Azure SQL Database</span>
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">Load Balancer</span>
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">Auto Scaling</span>
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">Monitoring</span>
+                        </div>
+                        <ul class="list-disc ml-6 text-gray-700 space-y-1">
+                            <li>99.9% 가용성 및 안정적인 서비스 환경 달성</li>
+                            <li>인프라 운영 비용 30% 절감 실현</li>
+                            <li>스크립트 기반의 자동화된 배포 시스템 구축</li>
+                        </ul>
+                    </div>
+                    <div class="project-card fade-in bg-white p-8 rounded-2xl shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <h3 class="text-2xl text-indigo-700 font-bold mb-4">뉴스 웹서비스 UI/UX 기획</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">사용자 중심의 직관적인 뉴스 플랫폼을 기획하고, 기능적 및 시각적 요소를 통합하여 프로토타입을 제작했습니다.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">사용자 리서치</span>
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">와이어프레임</span>
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">프로토타입</span>
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">사용성 테스트</span>
+                        </div>
+                        <ul class="list-disc ml-6 text-gray-700 space-y-1">
+                            <li>사용자 체류 시간 40% 증가 및 이탈률 감소 기여</li>
+                            <li>모바일 접근성 100% 준수 및 사용자 편의성 극대화</li>
+                            <li>직관적인 내비게이션 구조 설계로 정보 탐색 용이성 확보</li>
+                        </ul>
+                    </div>
+                    <div class="project-card fade-in bg-white p-8 rounded-2xl shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <h3 class="text-2xl text-indigo-700 font-bold mb-4">Python 웹크롤링 및 데이터 분석</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">다양한 웹사이트에서 필요한 데이터를 효율적으로 수집하고, 분석을 통해 유의미한 비즈니스 인사이트를 도출했습니다.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">Python</span>
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">BeautifulSoup</span>
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">Pandas</span>
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">Matplotlib</span>
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">Jupyter</span>
+                        </div>
+                        <ul class="list-disc ml-6 text-gray-700 space-y-1">
+                            <li>일 5만 건 이상의 데이터 수집 자동화 시스템 구축</li>
+                            <li>데이터 기반의 트렌드 분석 리포트 생성 및 비즈니스 의사결정 지원</li>
+                            <li>효율적인 스케줄링 구현으로 데이터 최신성 확보</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 lg:py-24 border-b border-gray-100" id="certifications">
+            <div class="container max-w-6xl mx-auto px-6">
+                <h2 class="fade-in text-5xl md:text-5xl font-extrabold text-center text-gray-800 mb-16 relative">
+                    <i class="fas fa-award text-indigo-600 mr-4"></i> 자격 및 교육 <span class="block w-24 h-1 bg-gradient-to-r from-indigo-600 to-blue-400 mx-auto mt-4 rounded-full"></span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                    <div class="cert-card fade-in bg-white p-8 rounded-2xl text-center shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <h3 class="text-2xl text-indigo-700 font-bold mb-4">Microsoft Azure Architect Technologies (AZ-304)</h3>
+                        <p class="text-gray-600 text-lg">2024.01 취득</p>
+                    </div>
+                    <div class="cert-card fade-in bg-white p-8 rounded-2xl text-center shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <h3 class="text-2xl text-indigo-700 font-bold mb-4">양주시 클라우드 전문가 양성 캠프</h3>
+                        <p class="text-gray-600 text-lg">2023.06 - 2023.12 (6개월 과정 수료)</p>
+                    </div>
+                    <div class="cert-card fade-in bg-white p-8 rounded-2xl text-center shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <h3 class="text-2xl text-indigo-700 font-bold mb-4">다수 온라인 강의 수료</h3>
+                        <p class="text-gray-600 text-lg">IT서비스기획, 웹퍼블리싱, 앱개발, Java</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 lg:py-24 border-b border-gray-100" id="about">
+            <div class="container max-w-6xl mx-auto px-6">
+                <h2 class="fade-in text-5xl md:text-5xl font-extrabold text-center text-gray-800 mb-16 relative">
+                    <i class="fas fa-user-circle text-indigo-600 mr-4"></i> 김태영은 누구인가? <span class="block w-24 h-1 bg-gradient-to-r from-indigo-600 to-blue-400 mx-auto mt-4 rounded-full"></span>
+                </h2>
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="about-story fade-in bg-white p-10 rounded-2xl mb-12 shadow-lg border border-gray-200">
+                        <h3 class="text-3xl text-indigo-700 font-bold mb-6">직무 전환의 계기</h3>
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            이전 직무인 기자로서 개발팀과 웹사이트 기획에 협업하면서 개발 업무의 매력에 깊이 빠져들었습니다.
+                            기술을 통해 직접 문제를 해결하고 가치를 창출하는 과정에 큰 흥미를 느꼈고,
+                            저의 기존 역량(마케팅, 기획, 문제 해결 능력)을 결합하면 더욱 큰 시너지를 낼 수 있다고 확신하여
+                            <strong class="text-indigo-700">클라우드 엔지니어</strong>로의 직무 전환을 결심하게 되었습니다.
+                        </p>
+                    </div>
+
+                    <div class="strengths-grid grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                        <div class="strength-item fade-in bg-white p-8 rounded-2xl shadow-lg border-t-4 border-indigo-600">
+                            <h4 class="text-xl text-gray-900 font-bold mb-4">Azure 클라우드 전문성</h4>
+                            <p class="text-gray-700 leading-relaxed">AZ-304 자격증 취득과 더불어 실제 기업 인프라 구축 프로젝트를 성공적으로 수행하며, 클라우드 환경 설계, 배포, 운영에 대한 깊이 있는 이해와 실무 역량을 갖추었습니다.</p>
+                        </div>
+                        <div class="strength-item fade-in bg-white p-8 rounded-2xl shadow-lg border-t-4 border-indigo-600">
+                            <h4 class="text-xl text-gray-900 font-bold mb-4">기획 및 데이터 분석 능력</h4>
+                            <p class="text-gray-700 leading-relaxed">뉴스 웹서비스 기획으로 사용자 체류시간을 40% 향상시키고, Python 기반 데이터 분석으로 마케팅 ROI 150%를 개선하며 데이터 기반 문제 해결 능력을 입증했습니다.</p>
+                        </div>
+                        <div class="strength-item fade-in bg-white p-8 rounded-2xl shadow-lg border-t-4 border-indigo-600">
+                            <h4 class="text-xl text-gray-900 font-bold mb-4">효율적인 프로젝트 관리 & 소통</h4>
+                            <p class="text-gray-700 leading-relaxed">다수 마케팅 프로젝트 PM 경험과 개발팀과의 협업을 통해, 비즈니스 요구사항을 기술적으로 구현하며 성공적인 결과를 이끌어내는 탁월한 소통 및 관리 능력을 갖추고 있습니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="philosophy-goals fade-in bg-gradient-to-br from-gray-900 to-gray-700 text-white p-10 rounded-2xl shadow-lg">
+                        <h3 class="text-3xl text-indigo-400 font-bold mb-6">저의 가치관과 미래</h3>
+                        <p class="leading-relaxed text-lg mb-4">
+                            저의 핵심 가치는 <strong class="text-indigo-300">신뢰, 책임감, 전문성</strong>입니다.
+                            이를 바탕으로 기술적 전문성을 겸비한 신뢰받고 책임감 있는 클라우드 엔지니어가 되는 것을 지향합니다.
+                        </p>
+                        <p class="leading-relaxed text-lg">
+                            궁극적으로는 개발 역량과 비즈니스 기획력을 함께 아우르는
+                            <strong class="text-indigo-300">DevOps 엔지니어</strong>로 성장하여,
+                            클라우드 환경에서 최고의 효율성과 가치를 제공하는 전문가가 되겠습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 lg:py-24" id="contact">
+            <div class="container max-w-6xl mx-auto px-6">
+                <h2 class="fade-in text-5xl md:text-5xl font-extrabold text-center text-gray-800 mb-16 relative">
+                    <i class="fas fa-handshake text-indigo-600 mr-4"></i> 연락처 <span class="block w-24 h-1 bg-gradient-to-r from-indigo-600 to-blue-400 mx-auto mt-4 rounded-full"></span>
+                </h2>
+                <div class="contact-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                    <div class="contact-item fade-in bg-white p-8 rounded-2xl text-center shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <i class="fas fa-envelope text-indigo-600 text-5xl mb-4"></i>
+                        <h4 class="text-2xl text-indigo-700 font-bold mb-3">이메일</h4>
+                        <a href="mailto:katiekim412@gmail.com" class="text-blue-600 font-semibold text-lg hover:underline">katiekim412@gmail.com</a>
+                    </div>
+                    <div class="contact-item fade-in bg-white p-8 rounded-2xl text-center shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <i class="fas fa-phone-alt text-indigo-600 text-5xl mb-4"></i>
+                        <h4 class="text-2xl text-indigo-700 font-bold mb-3">전화번호</h4>
+                        <p class="text-gray-700 font-semibold text-lg">010-8706-6505</p>
+                    </div>
+                    <div class="contact-item fade-in bg-white p-8 rounded-2xl text-center shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <i class="fab fa-linkedin text-indigo-600 text-5xl mb-4"></i>
+                        <h4 class="text-2xl text-indigo-700 font-bold mb-3">LinkedIn</h4>
+                        <a href="https://linkedin.com/in/katiekim412" target="_blank" class="text-blue-600 font-semibold text-lg hover:underline">linkedin.com/in/katiekim412</a>
+                    </div>
+                    <div class="contact-item fade-in bg-white p-8 rounded-2xl text-center shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <i class="fab fa-github text-indigo-600 text-5xl mb-4"></i>
+                        <h4 class="text-2xl text-indigo-700 font-bold mb-3">GitHub</h4>
+                        <a href="https://github.com/katiekim412" target="_blank" class="text-blue-600 font-semibold text-lg hover:underline">github.com/katiekim412</a>
+                    </div>
+                    <div class="contact-item fade-in bg-white p-8 rounded-2xl text-center shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <i class="fas fa-globe text-indigo-600 text-5xl mb-4"></i>
+                        <h4 class="text-2xl text-indigo-700 font-bold mb-3">개인 포트폴리오</h4>
+                        <a href="https://katiekim412.com" target="_blank" class="text-blue-600 font-semibold text-lg hover:underline">katiekim412.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-8 text-sm mt-12">
+        <p>&copy; 2025 김태영. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // 스크롤 애니메이션
+        function handleScrollAnimation() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150; // 요소가 보이기 시작할 기준점
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                } else if (elementTop > window.innerHeight) { // 스크롤이 다시 위로 올라갈 때 초기 상태로
+                    element.classList.remove('visible');
+                }
+            });
+        }
+
+        // 스크롤 이벤트 리스너
+        window.addEventListener('scroll', handleScrollAnimation);
+        
+        // 페이지 로드 시 실행 (이미 보이는 요소도 애니메이션 적용)
+        document.addEventListener('DOMContentLoaded', function() {
+            handleScrollAnimation();
+        });
+
+        // 부드러운 스크롤 (기존 코드 유지)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
