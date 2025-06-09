@@ -13,6 +13,7 @@
             font-family: 'Noto Sans KR', sans-serif;
             scroll-behavior: smooth;
             background: linear-gradient(135deg, #1A202C 0%, #2D3748 100%); /* Darker, more professional background */
+            padding-top: 64px; /* Adjust for fixed navbar height */
         }
         /* Fade-in animation for sections */
         .fade-in {
@@ -41,9 +42,110 @@
             border-bottom: 2px solid theme('colors.indigo.500'); /* Professional indigo accent */
             padding-bottom: 0.75rem;
         }
+
+        /* Fixed Navbar styles */
+        .navbar {
+            background-color: #1A202C; /* Dark background */
+            color: #E2E8F0; /* Light text */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+        .navbar-scrolled {
+            background-color: rgba(26, 32, 44, 0.95); /* Slightly transparent when scrolled */
+            backdrop-filter: blur(5px);
+        }
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .nav-links a {
+            color: #E2E8F0;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #6366F1; /* Indigo-500 */
+        }
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.75rem;
+            color: #E2E8F0;
+        }
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background-color: #1A202C;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 1rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .mobile-menu.active {
+            display: flex;
+        }
+        .mobile-menu a {
+            color: #E2E8F0;
+            padding: 0.75rem 1.5rem;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .mobile-menu a:hover {
+            background-color: #2D3748;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body class="text-gray-800 bg-gray-50 leading-relaxed overflow-x-hidden">
+    <nav class="navbar" id="main-navbar">
+        <div class="navbar-container">
+            <a href="#" class="text-xl font-bold text-white hover:text-indigo-400 transition-colors duration-300">김태영</a>
+            <div class="nav-links" id="desktop-nav-links">
+                <a href="#skills">핵심 역량</a>
+                <a href="#experience">주요 경험</a>
+                <a href="#projects">주요 프로젝트</a>
+                <a href="#certifications">자격 및 교육</a>
+                <a href="#about">About</a>
+                <a href="#contact">연락처</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#skills">핵심 역량</a>
+            <a href="#experience">주요 경험</a>
+            <a href="#projects">주요 프로젝트</a>
+            <a href="#certifications">자격 및 교육</a>
+            <a href="#about">About</a>
+            <a href="#contact">연락처</a>
+        </div>
+    </nav>
+
     <header class="relative py-24 text-center text-white overflow-hidden bg-gradient-to-br from-gray-900 to-gray-700 header-bg-grain">
         <div class="container max-w-6xl mx-auto px-6 relative z-20">
             <h1 class="text-6xl md:text-7xl font-extrabold mb-4 drop-shadow-md">김태영</h1>
@@ -51,12 +153,6 @@
             <p class="text-xl md:text-2xl opacity-90 mb-10 leading-relaxed max-w-3xl mx-auto">
                 "Azure 기반의 견고한 클라우드 인프라 구축 및 운영 역량과 사용자 중심의 기획력을 겸비한 <span class="text-indigo-300 font-bold">클라우드 엔지니어</span>입니다."
             </p>
-            <div class="mt-8 flex justify-center space-x-6">
-                <a href="mailto:katiekim412@gmail.com" class="text-white text-4xl transition-transform duration-300 hover:text-indigo-300 hover:-translate-y-1" aria-label="이메일"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/katiekim412" target="_blank" class="text-white text-4xl transition-transform duration-300 hover:text-indigo-300 hover:-translate-y-1" aria-label="링크드인"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/katiekim412" target="_blank" class="text-white text-4xl transition-transform duration-300 hover:text-indigo-300 hover:-translate-y-1" aria-label="깃허브"><i class="fab fa-github"></i></a>
-                <a href="https://katiekim412.com" target="_blank" class="text-white text-4xl transition-transform duration-300 hover:text-indigo-300 hover:-translate-y-1" aria-label="포트폴리오 웹사이트"><i class="fas fa-globe"></i></a>
-            </div>
         </div>
     </header>
 
@@ -308,7 +404,51 @@
     </footer>
 
     <script>
-        // 스크롤 애니메이션
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                }
+                
+                if (targetElement) {
+                    const headerOffset = 64; // Height of the fixed navbar
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        behavior: 'smooth',
+                        top: offsetPosition
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Change navbar background on scroll
+        const mainNavbar = document.getElementById('main-navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { // Adjust scroll threshold as needed
+                mainNavbar.classList.add('navbar-scrolled');
+            } else {
+                mainNavbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Fade-in animation for sections
         function handleScrollAnimation() {
             const elements = document.querySelectorAll('.fade-in');
             
@@ -330,22 +470,6 @@
         // 페이지 로드 시 실행 (이미 보이는 요소도 애니메이션 적용)
         document.addEventListener('DOMContentLoaded', function() {
             handleScrollAnimation();
-        });
-
-        // 부드러운 스크롤 (기존 코드 유지)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
         });
     </script>
 </body>
